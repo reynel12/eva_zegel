@@ -1,0 +1,640 @@
+:root{
+  --sb:#17191c;            /* fondo sidebar */
+  --pill:#23262a;          /* fondo item normal */
+  --group:#2a2e33;         /* fondo del grupo abierto */
+  --chip:#ff5e8e1a;        /* chip icono activo */
+  --accent:#ff5e8e;        /* rosado */
+  --txt:#e9edf3;           /* texto claro */
+  --mut:#b6bdc6;           /* gris tenue */
+  --line:#e7e9ee;          /* línea separadora */
+  --card:#fff;
+  --shadow:0 2px 8px rgba(0,0,0,.06);
+  --radius:12px;
+  --ink:#101317;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+button{font:inherit}
+a{color:inherit;text-decoration:none}
+body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:var(--ink)}
+
+/* ====== Layout (PC) ====== */
+.app{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+
+/* ====== SIDEBAR ====== */
+.sidebar{
+  background:var(--sb);color:var(--txt);
+  padding:12px 12px 16px;overflow:auto;font-size:13px;
+}
+.brand{display:flex;align-items:center;gap:8px;padding:6px 8px 14px}
+.brand .eva{display:flex;gap:6px}
+.brand .eva span{width:26px;height:26px;border:1.5px solid var(--txt);border-radius:5px;display:grid;place-items:center;font-weight:800;font-size:12px}
+.btn{display:flex;align-items:center;gap:10px;padding:8px 10px;color:var(--txt);font-size:13px;border:0;background:transparent;cursor:pointer}
+.btn i{width:18px;text-align:center;color:#d9dee5;font-size:13px}
+.group{margin-top:10px}
+.group-head{display:flex;align-items:center;gap:10px;padding:8px 10px;cursor:pointer;color:var(--txt);font-size:13px;background:transparent;border:0;width:100%;text-align:left;border-radius:8px}
+.group-head.static{cursor:default}
+.group-head .ico{width:26px;height:26px;border-radius:999px;display:grid;place-items:center;font-size:12px;color:#dfe4ea;background:transparent}
+.group-head .label{font-weight:600}
+.group-head .chev{margin-left:auto;font-size:10px;color:#cfd3d8;transition:transform .2s ease}
+.group.open .group-head .chev{transform:rotate(180deg)}
+.sub{display:block;list-style:none;padding:6px 4px 6px 8px}
+.sub[hidden]{display:none}
+.sub li{display:flex;align-items:center;gap:10px;color:#d9dee5;padding:7px 10px;border-radius:8px;margin:2px 0;font-size:13px;background:transparent}
+.sub li:hover{background:#262a2f}
+.sub i{width:16px;text-align:center;color:#b9c1c9;font-size:12px}
+.pill-quiet{background:#31363b}
+.dot{margin-left:auto;width:7px;height:7px;border-radius:50%;background:#ff3b3b}
+.dot.tiny{width:6px;height:6px}
+
+/* ====== TOPBAR ====== */
+.topbar{display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid var(--line);padding:12px 24px;position:sticky;top:0;z-index:10}
+.page-title{font-size:20px}
+.topbar .right{display:flex;align-items:center;gap:14px}
+.icon-btn{background:none;border:none;font-size:16px;cursor:pointer;line-height:1}
+.icon-btn.small{font-size:14px}
+.user{display:flex;align-items:center;gap:8px;background:#f3f4f6;padding:6px 10px;border-radius:20px;font-size:13px;border:0;cursor:pointer}
+.user img{width:24px;height:24px;border-radius:50%}
+
+/* EVA mini (solo móvil) */
+.eva-mini{display:none;gap:8px}
+.eva-mini span{display:grid;place-items:center;width:38px;height:30px;border:2px solid #fff;border-radius:8px;background:#111827;color:#fff;font-weight:800;font-size:16px}
+
+/* ====== POPOVERS ====== */
+.popover-wrap{position:relative}
+.menu{position:absolute;top:36px;right:0;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:12px;min-width:230px;padding:8px;display:none;z-index:20}
+.menu.show{display:block}
+.menu .menu-item{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:8px;font-size:13px;color:#333;background:transparent;border:0;cursor:pointer}
+.menu .menu-item:hover,.menu .menu-item:focus-visible{background:#f6f7f9}
+
+.user-card{position:absolute;top:44px;right:0;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:14px;width:260px;display:none;z-index:25;overflow:hidden}
+.user-card.show{display:block}
+.user-header{display:flex;justify-content:space-between;align-items:center;background:#f8f9fb;padding:12px 14px;border-bottom:1px solid var(--line)}
+.brand-mini{font-weight:800;letter-spacing:.5px}
+.astro{font-size:18px;color:var(--accent)}
+.profile{display:flex;gap:10px;align-items:center;padding:12px 14px}
+.avatar{width:48px;height:48px;border-radius:50%;background:#eef1f5;display:grid;place-items:center;font-size:18px;color:#7b8794}
+.info .name{font-weight:700}
+.info .mail{font-size:12px;color:#666}
+.user-actions{display:flex;flex-direction:column}
+.user-actions .line{display:flex;align-items:center;gap:8px;padding:10px 12px;border:none;background:transparent;border-top:1px solid var(--line);cursor:pointer;text-align:left;font-size:13px}
+.user-actions .line i{width:16px;text-align:center}
+
+/* ====== NOTIFICACIONES ====== */
+.notif-panel{position:absolute;top:36px;right:0;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:14px;width:360px;max-height:520px;display:none;z-index:22;overflow:hidden}
+.notif-panel.show{display:block}
+.notif-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line)}
+.notif-head h3{font-size:14px}
+.notif-tabs{display:flex;gap:18px;padding:0 14px;border-bottom:1px solid var(--line)}
+.ntab{position:relative;background:transparent;border:0;padding:10px 0;font-size:13px;color:#666;cursor:pointer}
+.ntab.active{color:#000;font-weight:700}
+.ntab.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);border-radius:2px}
+.notif-body{padding:10px 4px 12px 4px;overflow:auto;max-height:420px}
+.ntabpanel{display:none}
+.ntabpanel.show{display:block}
+.notif-item{display:grid;grid-template-columns:auto 1fr auto;gap:10px;padding:12px 10px;margin:6px 8px;border-radius:10px}
+.notif-item:hover{background:#f7f7f7}
+.nicon{position:relative;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#f0f1f4;color:#333;font-size:12px}
+.pink-dot{position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:var(--accent);border-radius:50%;border:2px solid #fff}
+.ncontent .ntitle{font-weight:700;font-size:13px;margin-bottom:2px}
+.ncontent .ntext{font-size:12px;color:#555;margin-bottom:6px}
+.link{font-size:12px;color:#0a58ff}
+.nmeta{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;color:#666}
+.trash{background:transparent;border:0;cursor:pointer;font-size:14px}
+
+/* ====== CONTENIDO (PC) ====== */
+.content{padding:22px 24px;display:grid;grid-template-columns:2fr 1fr;gap:20px}
+.main-col{display:flex;flex-direction:column;gap:20px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+.tabs{display:flex;gap:20px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.tab{padding:8px 0;font-size:13px;color:#666;cursor:pointer;position:relative;background:transparent;border:0}
+.tab.active{color:#000;font-weight:700}
+.tab.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);border-radius:2px}
+.tabpanels{padding-top:10px}
+.hidden{display:none}
+.big-empty{padding:40px;text-align:center;color:#666;font-size:13px}
+.big-empty i{font-size:28px;color:var(--accent);margin-bottom:6px}
+
+/* ====== PUBLICACIONES ====== */
+.side-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.side-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:13px}
+.side-title .blue{color:#0a58ff}
+.pub{display:flex;gap:10px;padding:8px;border-radius:10px;cursor:pointer}
+.pub:hover{background:#f7f7f7}
+.pub img{width:70px;height:70px;border-radius:8px;object-fit:cover}
+.pub .topic{font-size:12px;color:#444}
+.pub .title{font-weight:700;font-size:13px}
+.pub .author{font-size:12px;color:#777}
+
+/* ====== RESPONSIVE – MOBILE ====== */
+@media (max-width: 900px){
+
+  /* Ocultar sidebar y hacer layout de una sola columna */
+  .sidebar{display:none !important}
+  .app{display:block}
+
+  /* Topbar móvil: logo EVA + iconos */
+  .topbar{
+    position:sticky; top:0; background:#fff; padding:10px 12px;
+    border-bottom:1px solid var(--line); z-index:50;
+  }
+  .page-title{display:none}
+  .eva-mini{display:flex}
+
+  /* Contenido una columna + espacio para bottom nav */
+  .content{padding:12px; padding-bottom:96px; display:block}
+  .main-col{display:block}
+  .card{padding:18px;border-radius:18px}
+
+  /* Tabs más grandes en móvil */
+  .tabs{gap:16px;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .tab{padding:10px 0;font-size:15px;color:#6b7280}
+  .tab.active{color:#111827}
+  .tab.active::after{height:2px;background:var(--accent)}
+
+  .big-empty{padding:46px 12px;font-size:16px;color:#4b5563}
+  .big-empty i{font-size:40px}
+
+  aside{margin-top:12px}
+  .side-card{border-radius:18px}
+
+  /* Popovers adaptados al ancho del móvil */
+  .menu, .user-card, .notif-panel{
+    position:absolute; right:0; top:calc(100% + 8px);
+    width:min(92vw, 360px);
+    border-radius:14px; box-shadow:0 12px 28px rgba(0,0,0,.12);
+  }
+
+  /* ---------- Bottom Nav ---------- */
+  .mobile-nav{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:#111827; color:#fff; padding:8px 10px;
+    display:flex; justify-content:space-around; align-items:center;
+    border-top-left-radius:16px; border-top-right-radius:16px;
+  }
+  .mitem{
+    background:none;border:0;color:#cbd5e1;
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    font-size:12px;
+  }
+  .mitem i{font-size:20px}
+  .mitem.active{color:#fff}
+}
+
+/* Tablet pequeño: una columna también */
+@media (max-width: 640px){
+  .content{display:block}
+}
+
+/* Hover en items del sidebar (PC) */
+.group-head:hover{background:#1e2226}
+/* ====== AJUSTES FINALES PARA MÓVIL (estático, centrado y tipografías + pequeñas) ====== */
+@media (max-width: 900px){
+
+  /* 1) Nada “sticky”: ni topbar fija ni barra inferior fija */
+  .topbar{ position: static !important; }
+  .mobile-nav{
+    position: static !important;
+    margin: 10px auto 0;
+    width: min(600px, 94%);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  /* 2) Contenido centrado y con ancho cómodo */
+  .content{
+    padding: 12px;
+    padding-bottom: 16px;         /* ya no necesitamos dejar hueco para la barra fija */
+    max-width: 720px;             /* contenedor centrado */
+    margin: 0 auto;
+    display: block;
+  }
+  .card,
+  .side-card{
+    max-width: 720px;
+    margin: 12px auto;
+    border-radius: 16px;
+  }
+
+  /* 3) Logo EVA mini un poco más pequeño y alineado */
+  .eva-mini span{
+    width: 34px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  /* 4) Tipografías más pequeñas y cómodas */
+  body{ font-size: 15px; }
+  .tab{ font-size: 14px; }
+  .big-empty{ font-size: 14px; }
+  .big-empty i{ font-size: 30px; }
+
+  .side-title{ font-size: 12px; }
+  .pub .title{ font-size: 12px; }
+  .pub .topic{ font-size: 11px; }
+  .pub .author{ font-size: 11px; }
+
+  .user{ font-size: 12px; }
+  .icon-btn{ font-size: 15px; }
+
+  /* 5) Menús emergentes dimensionados al móvil y centrados con el contenido */
+  .menu, .user-card, .notif-panel{
+    right: 0;
+    width: min(92vw, 360px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    border-radius: 14px;
+  }
+}
+
+/* Extra: en pantallas muy pequeñas, reduce un punto más */
+@media (max-width: 380px){
+  body{ font-size: 14px; }
+  .tab{ font-size: 13px; }
+  .big-empty{ font-size: 13px; }
+  .big-empty i{ font-size: 26px; }
+}
+/* ======== FIJAR TOPBAR Y BOTTOM NAV + CONTENIDO CENTRADO EN MÓVIL ======== */
+
+/* Evita cualquier scroll horizontal en toda la página */
+html, body{ overflow-x:hidden; }
+
+/* Por si en escritorio se ve la barra inferior, la ocultamos (solo móvil) */
+.mobile-nav{ display:none; }
+
+/* Variables de alturas para calcular el padding del contenido */
+@media (max-width: 900px){
+  :root{
+    --topH: 56px;   /* alto de la topbar en móvil */
+    --botH: 68px;   /* alto de la barra inferior en móvil */
+  }
+
+  /* ---------- Topbar fija ---------- */
+  .topbar{
+    position: sticky !important;  /* permanece visible al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+  }
+
+  /* Logo EVA mini visible en móvil; título oculto */
+  .eva-mini{ display:flex; gap:8px; }
+  .eva-mini span{
+    width: 34px; height: 26px; font-size: 14px;
+    display:grid; place-items:center; border:2px solid #fff;
+    border-radius:8px; background:#111827; color:#fff; font-weight:800;
+  }
+  .page-title{ display:none; }
+
+  /* ---------- Contenido centrado y sin desbordes ---------- */
+  .content{
+    /* deja espacio arriba por la topbar y abajo por la barra inferior */
+    padding: calc(var(--topH) + 12px) 12px calc(var(--botH) + 12px);
+    width: 100%;
+    max-width: 720px;     /* “centradito” */
+    margin: 0 auto;
+    display: block;       /* una sola columna */
+    box-sizing: border-box;
+  }
+  .card,
+  .side-card{
+    max-width: 720px;
+    margin: 12px auto;
+    border-radius: 16px;
+  }
+
+  /* Ajuste de tamaños de letra más pequeños y limpios */
+  body{ font-size: 15px; }
+  .tab{ font-size: 14px; }
+  .big-empty{ font-size: 14px; }
+  .big-empty i{ font-size: 30px; }
+  .side-title{ font-size: 12px; }
+  .pub .title{ font-size: 12px; }
+  .pub .topic{ font-size: 11px; }
+  .pub .author{ font-size: 11px; }
+
+  /* ---------- Barra inferior fija (bottom nav) ---------- */
+  .mobile-nav{
+    position: fixed !important;
+    left: 0; right: 0; bottom: 0;
+    height: var(--botH);
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    background: #111827;
+    color: #fff;
+    z-index: 1000;
+    padding: 8px 10px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .mobile-nav .mitem{
+    background: none; border: 0; color: #cbd5e1;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    font-size: 12px; white-space: nowrap;
+  }
+  .mobile-nav .mitem i{ font-size: 20px; }
+  .mobile-nav .mitem.active{ color:#fff; }
+}
+
+/* Ultra compacto para pantallas muy pequeñas */
+@media (max-width: 380px){
+  body{ font-size: 14px; }
+  .tab{ font-size: 13px; }
+  .big-empty{ font-size: 13px; }
+  .big-empty i{ font-size: 26px; }
+}
+
+/* ===== TOPBAR FIJA + CONTENIDO SIN ESPACIO EXTRA ===== */
+
+/* Alturas y anchos base */
+:root{
+  --topH: 56px;           /* altura real de la cabecera */
+  --sbw: 260px;           /* ancho de sidebar en escritorio */
+}
+
+/* Cabecera fija de verdad (no se desplaza con el scroll) */
+.topbar{
+  position: fixed !important;
+  top: 0;
+  left: var(--sbw);
+  width: calc(100% - var(--sbw));
+  height: var(--topH);
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+/* El contenido “sube” justo debajo de la cabecera, sin huecos grandes */
+.content{
+  padding-top: calc(var(--topH) + 8px) !important; /* reduce el espacio */
+  margin-top: 0 !important;
+  max-width: 1200px;      /* centrado y sin desbordes horizontales */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+
+/* Asegura que no aparezca scroll horizontal por ningún motivo */
+html, body{ overflow-x: hidden !important; }
+
+/* ===== ADAPTACIÓN A MÓVIL/TABLET ===== */
+@media (max-width: 900px){
+  :root{
+    --sbw: 0px;           /* en móvil la topbar ocupa todo el ancho */
+    --topH: 54px;
+  }
+  .topbar{
+    left: 0;
+    width: 100%;
+    height: var(--topH);
+    padding: 8px 12px;
+  }
+
+  .content{
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 720px;     /* centrado cómodo en móvil */
+  }
+}
+
+/* Más compacto en pantallas muy pequeñas */
+@media (max-width: 380px){
+  :root{ --topH: 50px; }
+  .content{ padding-top: calc(var(--topH) + 6px) !important; }
+  body{ font-size: 14px; }
+  .tab{ font-size: 13px; }
+}
+/* ===== AJUSTES EVA + CENTRADO DE MENÚS ===== */
+
+/* Logo EVA más pequeño */
+.topbar .eva span{
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  border-radius: 4px;
+}
+
+/* Menú de ayuda (pregunta) y notificaciones centrados */
+.popover-wrap .menu,
+.notif-panel{
+  left: 50% !important;           /* posición desde el centro */
+  transform: translateX(-50%);    /* corrección para centrar */
+  right: auto !important;         /* ignorar alineación a la derecha */
+}
+
+/* Ajustes de tamaño en móvil */
+@media (max-width: 480px){
+  .topbar .eva span{
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .popover-wrap .menu,
+  .notif-panel{
+    width: 90%;                   /* más compacto en pantallas pequeñas */
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+/* ===== AJUSTE EVA MÁS PEQUEÑO ===== */
+.topbar .eva span{
+  width: 18px !important;
+  height: 18px !important;
+  font-size: 9px !important;
+  border-radius: 4px;
+  margin-right: 2px;
+}
+
+/* ===== CENTRAR SOLO EL MENÚ DE AYUDA ===== */
+#helpMenu.menu{
+  left: 50% !important;
+  transform: translateX(-50%);
+  right: auto !important;
+}
+
+/* ===== NOTIFICACIONES NORMAL (alineado a la derecha) ===== */
+.notif-panel{
+  right: 0 !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* ===== AJUSTES EXTRA EN MÓVIL ===== */
+@media (max-width: 480px){
+  .topbar .eva span{
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 8px !important;
+  }
+
+  #helpMenu.menu{
+    width: 85%;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .notif-panel{
+    width: 90%;
+    max-width: 320px;
+    right: 5% !important;
+  }
+}
+/* Ocultar campanita y panel de notificaciones, sin borrar markup */
+#bellBtn,
+#notifPanel {
+  display: none !important;
+}
+
+/* Orden y espaciado prolijo de los íconos a la derecha */
+.topbar .right { gap: 12px; }
+
+/* Tamaños consistentes para botones de iconos */
+.icon-btn { line-height: 1; }
+/* ===== Topbar: ocultar ayuda, notificaciones y correo ===== */
+#helpBtn,
+#helpMenu,
+#bellBtn,
+#notifPanel {
+  display: none !important; /* campanita ya queda oculta aquí también */
+}
+
+/* El único botón .icon-btn directo dentro de .right es el sobre (correo) */
+.topbar .right > .icon-btn{
+  display: none !important;  /* oculta el correo */
+}
+
+/* ===== Perfil: ocultar la foto y mostrar un ícono + nombre ===== */
+.user img{
+  display: none !important;   /* no se muestra la imagen */
+}
+
+/* Insertamos el ícono de usuario antes del nombre (Font Awesome) */
+.user::before{
+  content: "\f007";                   /* fa-user */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;                    /* sólido */
+  font-size: 14px;
+  color: #7b8794;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: #eef1f5;
+  display: inline-grid;
+  place-items: center;
+}
+
+/* Ajustes de espaciado en el botón de perfil */
+.user{
+  gap: 8px;
+  padding: 6px 10px;
+}
+
+/* Compacto en móvil */
+@media (max-width:480px){
+  .user::before{
+    width: 22px; height: 22px; font-size: 13px;
+  }
+}
+/* ==== LOGO MÁS GRANDE (override) ==== */
+@media (max-width: 900px){
+  :root{ --topH: 76px; }                 /* sube la altura de la cabecera */
+  .topbar{
+    height: var(--topH) !important;
+    padding: 10px 14px;
+  }
+  .eva-mini .eva-logo{
+    height: 56px !important;             /* antes 40px */
+    width: auto;
+  }
+}
+
+/* Muy pequeñas: un poco menos para que no se corte */
+@media (max-width: 380px){
+  :root{ --topH: 70px; }
+  .eva-mini .eva-logo{ height: 50px !important; }
+}
+/* ======== NOTAS – MOBILE FIRST, CENTRADO ========= */
+
+/* Contenedor móvil centrado y estrecho para lectura cómoda */
+.mobile-only-centered{
+  max-width: 520px;        /* ancho cómodo para celulares */
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Tarjetas centradas siempre */
+.center-card{
+  width: min(520px, 100%);
+  margin: 12px auto;
+}
+
+/* Subtítulo grisito */
+.muted-sub{
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Encabezado y selects */
+.grades-card .grades-head{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.grades-card .grades-meta{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.grades-select{
+  width: 100%;
+  background:#f5f6f8;border:1px solid var(--line);border-radius:12px;
+  padding:10px 12px;font-size:14px;color:#111827
+}
+.period-title{
+  font-size:14px;margin:6px 0 10px;color:#374151;font-weight:700
+}
+
+/* Tabla compacta y legible en móvil */
+.table-wrap{width:100%;overflow-x:auto}
+.grades-table{width:100%;border-collapse:collapse;font-size:13px}
+.grades-table thead th{
+  position: sticky; top: 0;
+  text-align:left;background:#f9fafb;border-bottom:1px solid var(--line);
+  padding:10px;color:#6b7280;font-weight:700
+}
+.grades-table tbody td{padding:10px;border-bottom:1px solid var(--line)}
+.grades-table tfoot td{padding:10px;border-top:1px solid var(--line)}
+.grades-table .note{font-weight:800;color:#111827}
+.grades-table .badge{
+  display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800
+}
+.badge.aprobado{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.grades-table .total{font-weight:800;color:#111827}
+
+/* Secciones de periodos bloqueados */
+.disabled-period{
+  opacity:.95;
+  background: #f9fafb !important;
+  border: 1px dashed #d1d5db;
+}
+.lock-head{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px
+}
+.lock-head h4{font-size:14px}
+.badge.lock{
+  background:#fff; color:#6b7280; border:1px solid #d1d5db;
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 10px; border-radius:999px; font-weight:700; font-size:12px;
+}
+.lock-text{font-size:13px;color:#6b7280}
+
+/* Extra: en pantallas muy pequeñas */
+@media (max-width: 380px){
+  .mobile-only-centered{ max-width: 94vw; }
+  .grades-table{ font-size:12px; }
+}

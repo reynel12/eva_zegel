@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EVA – Pagos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <!-- ====== SIDEBAR (PC) ====== -->
+  <nav class="sidebar" aria-label="Menú principal">
+    <div class="brand">
+      <div class="eva"><span>E</span><span>V</span><span>A</span></div>
+    </div>
+
+    <a class="btn" href="inicio.html"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+
+    <!-- Pagos -->
+    <section class="group">
+      <div class="group-head static">
+        <div class="ico"><i class="fa-solid fa-building-columns"></i></div>
+        <span class="label">Pagos</span>
+        <span class="dot"></span>
+      </div>
+    </section>
+  </nav>
+
+  <!-- ====== DERECHA ====== -->
+  <div>
+    <header class="topbar">
+      <div class="eva-mini" aria-label="Logo">
+        <img class="eva-logo" src="logo.png" alt="Logo institucional">
+      </div>
+
+      <!-- Perfil -->
+      <div class="popover-wrap">
+        <button class="user" id="userBtn" aria-haspopup="true" aria-expanded="false" aria-controls="userCard">
+          <span>Britney Gamarra</span>
+          <i class="fa-solid fa-chevron-down" style="font-size:10px"></i>
+        </button>
+        <div class="user-card" id="userCard" role="menu" aria-hidden="true">
+          <div class="user-header">
+            <div class="brand-mini">ZEGEL</div>
+            <div class="astro"><i class="fa-solid fa-user-astronaut"></i></div>
+          </div>
+          <div class="profile">
+            <div class="avatar"><i class="fa-regular fa-user"></i></div>
+            <div class="info">
+              <div class="name">Britney Gamarra</div>
+              <div class="mail">felicitatapiacardenas@gmail.com</div>
+            </div>
+          </div>
+          <div class="user-actions">
+            <button class="line"><i class="fa-regular fa-user"></i> Mi cuenta</button>
+            <button class="line"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="main-col">
+
+        <!-- ==== PAGOS PENDIENTES ==== -->
+        <section class="card center-card mobile-only-centered" style="border:2px solid #f87171">
+          <h3 class="h3" style="margin-bottom:10px; color:#b91c1c">
+            <i class="fa-solid fa-circle-exclamation"></i> Pagos pendientes
+          </h3>
+          <div class="table-wrap">
+            <table class="grades-table">
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Periodo</th>
+                  <th>Monto</th>
+                  <th>F. vencimiento</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:#fff5f5">
+                  <td>Matrícula</td>
+                  <td>2025-2</td>
+                  <td>S/ 200.00</td>
+                  <td>18/08/2025</td>
+                  <td><span class="badge lock">Pendiente</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:12px; text-align:right">
+            <a href="#" class="link"><i class="fa-solid fa-credit-card"></i> Pagar ahora</a>
+          </div>
+        </section>
+
+        <!-- ==== HISTORIAL DE PAGOS ==== -->
+        <section class="card center-card mobile-only-centered">
+          <h3 class="h3" style="margin-bottom:10px">Historial de Pagos</h3>
+          <div class="table-wrap">
+            <table class="grades-table" aria-describedby="desc-pagos">
+              <caption id="desc-pagos" class="muted-sub" style="caption-side: bottom; text-align:left; padding:8px 0 0">
+                Listado de pagos realizados y pendientes del periodo académico.
+              </caption>
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Descripción</th>
+                  <th>Monto</th>
+                  <th>F. de pago</th>
+                  <th>Periodo académico</th>
+                  <th>Comprobante</th>
+                  <th>Recibo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cuota 5</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td>S/ 225.00</td>
+                  <td>18.08.2025</td>
+                  <td>Primer periodo</td>
+                  <td>Boleta de Venta</td>
+                  <td><a class="link" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>Cuota 4</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td>S/ 225.00</td>
+                  <td>14.07.2025</td>
+                  <td>Primer periodo</td>
+                  <td>Boleta de Venta</td>
+                  <td><a class="link" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>Cuota 3</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td>S/ 225.00</td>
+                  <td>14.06.2025</td>
+                  <td>Primer periodo</td>
+                  <td>Boleta de Venta</td>
+                  <td><a class="link" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>Cuota 2</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td>S/ 225.00</td>
+                  <td>17.05.2025</td>
+                  <td>Primer periodo</td>
+                  <td>Boleta de Venta</td>
+                  <td><a class="link" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>Cuota 1</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td>S/ 225.00</td>
+                  <td>15.04.2025</td>
+                  <td>Primer periodo</td>
+                  <td>Boleta de Venta</td>
+                  <td><a class="link" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>Matrícula</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td>S/ 99.00</td>
+                  <td>06.01.2025</td>
+                  <td>Primer periodo</td>
+                  <td>Boleta de Venta</td>
+                  <td><a class="link" href="#">Ver</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ==== OPCIONES DE PAGO ==== -->
+        <section class="card center-card mobile-only-centered">
+          <h3 class="h3">Opciones de Pago</h3>
+          <p class="muted-sub" style="margin:6px 0 12px">
+            Realiza tus pagos en línea con tarjeta o en agentes autorizados.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a href="#" class="link"><i class="fa-solid fa-credit-card"></i> Pagar ahora</a>
+            <a href="#" class="link"><i class="fa-regular fa-file-lines"></i> Descargar estado de cuenta</a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===== Navegación inferior ===== -->
+<nav class="mobile-nav" aria-label="Navegación inferior">
+  <a class="mitem" href="inicio.html" data-route="inicio">
+    <i class="fa-solid fa-house"></i><span>Inicio</span>
+  </a>
+  <a class="mitem" href="informe.html" data-route="informes">
+    <i class="fa-regular fa-rectangle-list"></i><span>Informes</span>
+  </a>
+  <a class="mitem" href="reporte.html" data-route="reportes">
+    <i class="fa-solid fa-chart-column"></i><span>Reportes</span>
+  </a>
+  <a class="mitem active" href="pagos.html" data-route="pagos" aria-current="page">
+    <i class="fa-solid fa-credit-card"></i><span>Pagos</span>
+  </a>
+  <a class="mitem" href="notas.html" data-route="notas">
+    <i class="fa-solid fa-graduation-cap"></i><span>Notas</span>
+  </a>
+</nav>
+
+<script>
+// Popover de usuario
+const userBtn=document.getElementById('userBtn');
+const userCard=document.getElementById('userCard');
+function toggle(el){ el.classList.toggle('show'); el?.setAttribute?.('aria-hidden', String(!el.classList.contains('show'))); }
+function hide(el){ el.classList.remove('show'); el?.setAttribute?.('aria-hidden','true'); }
+userBtn?.addEventListener('click',(e)=>{e.stopPropagation();toggle(userCard);});
+document.addEventListener('click',()=>hide(userCard));
+</script>
+</body>
+</html>

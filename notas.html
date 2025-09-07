@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EVA – Notas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- (Oculto en móvil por CSS) -->
+  <nav class="sidebar" aria-label="Menú principal">
+    <div class="brand"><div class="eva"><span>E</span><span>V</span><span>A</span></div></div>
+  </nav>
+
+  <div>
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="eva-mini" aria-label="Logo">
+        <img class="eva-logo" src="../logo.png" alt="Logo institucional">
+      </div>
+      <div class="right">
+        <div class="popover-wrap">
+          <button class="user" id="userBtn" aria-haspopup="true" aria-expanded="false" aria-controls="userCard">
+            <span>Britney Gamarra</span>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px"></i>
+          </button>
+          <div class="user-card" id="userCard" role="menu" aria-hidden="true">
+            <div class="user-header">
+              <div class="brand-mini">ZEGEL</div>
+              <div class="astro"><i class="fa-solid fa-user-astronaut"></i></div>
+            </div>
+            <div class="profile">
+              <div class="avatar"><i class="fa-regular fa-user"></i></div>
+              <div class="info">
+                <div class="name">Britney Gamarra</div>
+                <div class="mail">felicitatapiacardenas@gmail.com</div>
+              </div>
+            </div>
+            <div class="user-actions">
+              <button class="line"><i class="fa-regular fa-user"></i> Mi cuenta</button>
+              <button class="line"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== CONTENIDO ===== -->
+    <main class="content mobile-only-centered">
+      <div class="main-col">
+
+        <!-- ===== PERIODO 1 (con notas) ===== -->
+        <section class="card grades-card center-card">
+          <header class="grades-head">
+            <div>
+              <h3 class="h3">Avance Curricular</h3>
+              <div class="muted-sub">Resumen de tus notas</div>
+            </div>
+            <div class="grades-meta">
+              <select class="grades-select"><option selected>EES</option></select>
+              <select class="grades-select">
+                <option selected>[0909.78] GESTIÓN DE SISTEMAS DE INFORMACIÓN</option>
+              </select>
+            </div>
+          </header>
+
+          <h4 class="period-title">Primer periodo académico</h4>
+
+          <div class="table-wrap">
+            <table class="grades-table">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Unidad didáctica</th>
+                  <th>Crédito</th>
+                  <th># vez</th>
+                  <th>Nota</th>
+                  <th>Periodo lectivo</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1C003-GSI</td>
+                  <td>Fundamentos de programación</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td><span class="note">18.10</span></td>
+                  <td>2025-I</td>
+                  <td><span class="badge aprobado">Aprobado</span></td>
+                </tr>
+                <tr>
+                  <td>1C004-GSI</td>
+                  <td>Desarrollo web</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td><span class="note">17.00</span></td>
+                  <td>2025-I</td>
+                  <td><span class="badge aprobado">Aprobado</span></td>
+                </tr>
+                <tr>
+                  <td>1C001-GSI</td>
+                  <td>Soporte de TI</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td><span class="note">17.40</span></td>
+                  <td>2025-I</td>
+                  <td><span class="badge aprobado">Aprobado</span></td>
+                </tr>
+                <tr>
+                  <td>1C001-GEN</td>
+                  <td>Lectura comprensiva y escritura</td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td><span class="note">18.60</span></td>
+                  <td>2025-I</td>
+                  <td><span class="badge aprobado">Aprobado</span></td>
+                </tr>
+                <tr>
+                  <td>1C007-GEN</td>
+                  <td>Fundamentos lógico-matemáticos</td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td><span class="note">20.00</span></td>
+                  <td>2025-I</td>
+                  <td><span class="badge aprobado">Aprobado</span></td>
+                </tr>
+                <tr>
+                  <td>1C003-GEN</td>
+                  <td>Habilidades intrapersonales</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td><span class="note">20.00</span></td>
+                  <td>2025-I</td>
+                  <td><span class="badge aprobado">Aprobado</span></td>
+                </tr>
+                <tr>
+                  <td>1C006-GEN</td>
+                  <td>Herramientas ofimáticas</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td><span class="note">19.00</span></td>
+                  <td>2025-I</td>
+                  <td><span class="badge aprobado">Aprobado</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2" class="total">Total de créditos</td>
+                  <td class="total">25</td>
+                  <td colspan="4"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===== PERIODOS 2 AL 8 (no disponible) ===== -->
+        <section class="card disabled-period center-card">
+          <header class="lock-head">
+            <h4>Segundo periodo académico</h4>
+            <span class="badge lock"><i class="fa-solid fa-lock"></i> No disponible</span>
+          </header>
+          <p class="lock-text">Aún no hay notas registradas para este periodo.</p>
+        </section>
+
+        <section class="card disabled-period center-card">
+          <header class="lock-head">
+            <h4>Tercer periodo académico</h4>
+            <span class="badge lock"><i class="fa-solid fa-lock"></i> No disponible</span>
+          </header>
+          <p class="lock-text">Aún no hay notas registradas para este periodo.</p>
+        </section>
+
+        <section class="card disabled-period center-card">
+          <header class="lock-head">
+            <h4>Cuarto periodo académico</h4>
+            <span class="badge lock"><i class="fa-solid fa-lock"></i> No disponible</span>
+          </header>
+          <p class="lock-text">Aún no hay notas registradas para este periodo.</p>
+        </section>
+
+        <section class="card disabled-period center-card">
+          <header class="lock-head">
+            <h4>Quinto periodo académico</h4>
+            <span class="badge lock"><i class="fa-solid fa-lock"></i> No disponible</span>
+          </header>
+          <p class="lock-text">Aún no hay notas registradas para este periodo.</p>
+        </section>
+
+        <section class="card disabled-period center-card">
+          <header class="lock-head">
+            <h4>Sexto periodo académico</h4>
+            <span class="badge lock"><i class="fa-solid fa-lock"></i> No disponible</span>
+          </header>
+          <p class="lock-text">Aún no hay notas registradas para este periodo.</p>
+        </section>
+
+        <section class="card disabled-period center-card">
+          <header class="lock-head">
+            <h4>Séptimo periodo académico</h4>
+            <span class="badge lock"><i class="fa-solid fa-lock"></i> No disponible</span>
+          </header>
+          <p class="lock-text">Aún no hay notas registradas para este periodo.</p>
+        </section>
+
+        <section class="card disabled-period center-card">
+          <header class="lock-head">
+            <h4>Octavo periodo académico</h4>
+            <span class="badge lock"><i class="fa-solid fa-lock"></i> No disponible</span>
+          </header>
+          <p class="lock-text">Aún no hay notas registradas para este periodo.</p>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Bottom Nav -->
+<nav class="mobile-nav" aria-label="Navegación inferior">
+  <a class="mitem" href="inicio.html" data-route="inicio">
+    <i class="fa-solid fa-house"></i><span>Inicio</span>
+  </a>
+  <a class="mitem" href="informe.html" data-route="informes">
+    <i class="fa-regular fa-rectangle-list"></i><span>Informes</span>
+  </a>
+  <a class="mitem" href="reporte.html" data-route="reportes">
+    <i class="fa-solid fa-chart-column"></i><span>Reportes</span>
+  </a>
+  <a class="mitem" href="pagos.html" data-route="pagos">
+    <i class="fa-solid fa-credit-card"></i><span>Pagos</span>
+  </a>
+  <a class="mitem active" href="notas.html" data-route="notas">
+    <i class="fa-solid fa-graduation-cap"></i><span>Notas</span>
+  </a>
+</nav>
+
+<script>
+// Toggle tarjeta de usuario (igual que en inicio)
+const userBtn=document.getElementById('userBtn');
+const userCard=document.getElementById('userCard');
+function hide(el){ el.classList.remove('show'); el?.setAttribute?.('aria-hidden','true'); }
+function toggle(el){ el.classList.toggle('show'); el?.setAttribute?.('aria-hidden', String(!el.classList.contains('show'))); }
+userBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(userCard); });
+document.addEventListener('click', ()=>{ hide(userCard); });
+
+// Marcar activo en la barra inferior
+(function(){
+  const route = 'notas';
+  document.querySelectorAll('.mobile-nav .mitem').forEach(a=>{
+    const active = a.dataset.route === route;
+    a.classList.toggle('active', active);
+    if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  });
+})();
+</script>
+</body>
+</html>

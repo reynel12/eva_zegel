@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EVA – Informes y Noticias</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ====== Estética mejorada para INFORME ====== */
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid #e5e7eb;background:#fff}
+    .chip i{font-size:12px;color:#ef4444}
+
+    /* HERO */
+    .hero{
+      position:relative;overflow:hidden;
+      background:linear-gradient(180deg,#fff, #fff6f7);
+      border:1px solid #ffd4db;border-radius:18px;box-shadow:var(--shadow);padding:16px;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:-40% -20% auto auto;height:180px;width:180px;border-radius:50%;
+      background:radial-gradient(closest-side,rgba(255,94,142,.25),transparent 70%);
+      transform:translate(30%,-30%);
+    }
+    .hero-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .hero-icon{
+      width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+      background:#fff;border:1px solid #fecaca;color:#ef4444;font-size:16px;
+    }
+    .hero-title{font-size:18px;font-weight:800}
+    .hero-sub{font-size:13px;color:#6b7280;margin-bottom:8px}
+    .hero-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 0}
+    .hero-call{
+      margin-top:10px;background:#fff;border:2px dashed #fda4af;border-radius:14px;
+      padding:10px 12px;color:#991b1b;font-weight:800;line-height:1.35
+    }
+    .hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn-cta{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;
+      background:#111827;color:#fff;font-size:13px;border:0;text-decoration:none
+    }
+    .btn-ghost{background:#fff;border:1px solid var(--line);color:#111827}
+
+    /* Noticias */
+    .news-wrap{display:grid;grid-template-columns:1fr;gap:12px}
+    .news-card{
+      display:grid;grid-template-columns:108px 1fr;gap:12px;
+      background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;
+      box-shadow:0 1px 0 rgba(0,0,0,.02), var(--shadow);transition:transform .12s ease, box-shadow .12s ease
+    }
+    .news-card:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.06)}
+    .news-card img{width:108px;height:108px;border-radius:12px;object-fit:cover}
+    .news-meta{font-size:12px;color:#6b7280;margin:2px 0 6px}
+    .news-title{font-weight:800;margin-bottom:4px}
+    .news-actions{margin-top:6px;display:flex;gap:12px;align-items:center}
+    .link.soft{font-size:12px;color:#0a58ff}
+    .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid #e5e7eb;background:#f9fafb;color:#374151}
+
+    @media (max-width:600px){
+      .hero-grid{grid-template-columns:1fr}
+      .news-card{grid-template-columns:90px 1fr}
+      .news-card img{width:90px;height:90px}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <!-- ====== SIDEBAR (PC) ====== -->
+  <nav class="sidebar" aria-label="Menú principal">
+    <div class="brand">
+      <div class="eva"><span>E</span><span>V</span><span>A</span></div>
+    </div>
+
+    <a class="btn" href="inicio.html"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+
+    <!-- Informes -->
+    <section class="group">
+      <div class="group-head static">
+        <div class="ico"><i class="fa-regular fa-rectangle-list"></i></div>
+        <span class="label">Informes y Noticias</span>
+      </div>
+    </section>
+  </nav>
+
+  <!-- ====== DERECHA ====== -->
+  <div>
+    <header class="topbar">
+      <div class="eva-mini" aria-label="Logo">
+        <img class="eva-logo" src="logo.png" alt="Logo institucional">
+      </div>
+
+      <!-- Perfil -->
+      <div class="popover-wrap">
+        <button class="user" id="userBtn" aria-haspopup="true" aria-expanded="false" aria-controls="userCard">
+          <span>Britney Gamarra</span>
+          <i class="fa-solid fa-chevron-down" style="font-size:10px"></i>
+        </button>
+        <div class="user-card" id="userCard" role="menu" aria-hidden="true">
+          <div class="user-header">
+            <div class="brand-mini">ZEGEL</div>
+            <div class="astro"><i class="fa-solid fa-user-astronaut"></i></div>
+          </div>
+          <div class="profile">
+            <div class="avatar"><i class="fa-regular fa-user"></i></div>
+            <div class="info">
+              <div class="name">Britney Gamarra</div>
+              <div class="mail">felicitatapiacardenas@gmail.com</div>
+            </div>
+          </div>
+          <div class="user-actions">
+            <button class="line"><i class="fa-regular fa-user"></i> Mi cuenta</button>
+            <button class="line"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="main-col">
+
+        <!-- ===== Comunicado principal (HERO) ===== -->
+        <section class="hero center-card mobile-only-centered">
+          <div class="hero-head">
+            <div class="hero-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="hero-title">Matrículas abiertas – Información clave</div>
+          </div>
+          <p class="hero-sub">Revisa fechas oficiales y condiciones del proceso de matrícula.</p>
+
+          <div class="hero-grid">
+            <div class="chip"><i class="fa-regular fa-calendar"></i><span><b>Cierre de matrículas:</b> 18 de septiembre</span></div>
+            <div class="chip"><i class="fa-regular fa-calendar-check"></i><span><b>Inicio de clases:</b> 10 de octubre</span></div>
+            <div class="chip"><i class="fa-regular fa-clock"></i><span><b>Cambios de modalidad:</b> 20 de octubre</span></div>
+          </div>
+
+          <div class="hero-call">
+            <span style="display:inline-block;margin-bottom:4px"><i class="fa-solid fa-circle-exclamation"></i> Aviso importante</span><br>
+            Todos los trámites (matrícula, cambio de turno, modalidad, etc.) se realizan <u>exclusivamente de manera presencial</u>. <b>No habrá atención virtual.</b>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#" class="btn-cta"><i class="fa-solid fa-person-walking"></i> Ir a matrícula presencial</a>
+            <a href="#" class="btn-cta btn-ghost"><i class="fa-regular fa-circle-question"></i> Ver requisitos</a>
+          </div>
+        </section>
+
+        <!-- ===== Noticias (5) ===== -->
+        <section class="card center-card mobile-only-centered">
+          <h3 class="h3" style="margin-bottom:10px">Noticias recientes</h3>
+          <div class="news-wrap">
+
+            <!-- 1 -->
+            <article class="news-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDE2_zDzmcWvWhBaB0uZxXT5qKVmo2J_nY5g&s" alt="Estudiantes en mesa de atención">
+              <div>
+                <div class="news-meta">Vida académica • Hoy • <span class="pill">Matrículas</span></div>
+                <div class="news-title">Refuerzan módulos de atención para matrículas</div>
+                <p class="muted-sub">Se habilitaron más puestos para agilizar el proceso presencial durante horas pico. Recuerda llevar DNI y comprobante.</p>
+                <div class="news-actions">
+                  <a class="link soft" href="#">Ver más</a>
+                  <span class="pill">Consejo: llega 15–20 min antes</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="news-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVJbnTHBGmPt2NbjsXk8hfAHz58xBBZftnAA&s" alt="Centro de atención estudiantil">
+              <div>
+                <div class="news-meta">Servicios • Esta semana</div>
+                <div class="news-title">Centro de atención amplía horarios</div>
+                <p class="muted-sub">Durante matrícula, atención extendida en ventanilla académica y caja. Solo modalidad presencial.</p>
+                <div class="news-actions">
+                  <a class="link soft" href="#">Horarios</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="news-card">
+              <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=640&auto=format&fit=crop" alt="Documentos para admisiones">
+              <div>
+                <div class="news-meta">Admisiones • Ayer</div>
+                <div class="news-title">Requisitos rápidos para tu trámite</div>
+                <p class="muted-sub">DNI vigente, constancia de pago y ficha de datos. Descarga los formatos y acércate a la mesa única.</p>
+                <div class="news-actions">
+                  <a class="link soft" href="#">Descargar formatos</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="news-card">
+              <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=640&auto=format&fit=crop" alt="Orientación a ingresantes">
+              <div>
+                <div class="news-meta">Bienestar • Esta semana</div>
+                <div class="news-title">Puntos de orientación para ingresantes</div>
+                <p class="muted-sub">Brigadas de apoyo te guiarán sobre aulas, servicios y cronograma. Busca los chalecos azules.</p>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="news-card">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=640&auto=format&fit=crop" alt="Estudiantes en campus">
+              <div>
+                <div class="news-meta">Comunidad • Esta semana</div>
+                <div class="news-title">Actividades de bienvenida en octubre</div>
+                <p class="muted-sub">Desde el 10 de octubre habrá ferias de servicios, clubes y recorridos de campus para todos los ciclos.</p>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===== Navegación inferior ===== -->
+<nav class="mobile-nav" aria-label="Navegación inferior">
+  <a class="mitem" href="inicio.html" data-route="inicio">
+    <i class="fa-solid fa-house"></i><span>Inicio</span>
+  </a>
+  <a class="mitem active" href="informe.html" data-route="informes" aria-current="page">
+    <i class="fa-regular fa-rectangle-list"></i><span>Informes</span>
+  </a>
+  <a class="mitem" href="reporte.html" data-route="reportes">
+    <i class="fa-solid fa-chart-column"></i><span>Reportes</span>
+  </a>
+  <a class="mitem" href="pagos.html" data-route="pagos">
+    <i class="fa-solid fa-credit-card"></i><span>Pagos</span>
+  </a>
+  <a class="mitem" href="notas.html" data-route="notas">
+    <i class="fa-solid fa-graduation-cap"></i><span>Notas</span>
+  </a>
+</nav>
+
+<script>
+// Popover de usuario
+const userBtn=document.getElementById('userBtn');
+const userCard=document.getElementById('userCard');
+function toggle(el){ el.classList.toggle('show'); el?.setAttribute?.('aria-hidden', String(!el.classList.contains('show'))); }
+function hide(el){ el.classList.remove('show'); el?.setAttribute?.('aria-hidden','true'); }
+userBtn?.addEventListener('click',(e)=>{e.stopPropagation();toggle(userCard);});
+document.addEventListener('click',()=>hide(userCard));
+</script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EVA – Reportes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <!-- ====== SIDEBAR (PC) ====== -->
+  <nav class="sidebar" aria-label="Menú principal">
+    <div class="brand">
+      <div class="eva"><span>E</span><span>V</span><span>A</span></div>
+    </div>
+
+    <a class="btn" href="inicio.html"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+
+    <!-- Reportes -->
+    <section class="group">
+      <div class="group-head static">
+        <div class="ico"><i class="fa-solid fa-chart-column"></i></div>
+        <span class="label">Reportes</span>
+      </div>
+    </section>
+  </nav>
+
+  <!-- ====== DERECHA ====== -->
+  <div>
+    <header class="topbar">
+      <div class="eva-mini" aria-label="Logo">
+        <img class="eva-logo" src="logo.png" alt="Logo institucional">
+      </div>
+
+      <!-- Perfil (mismo patrón) -->
+      <div class="popover-wrap">
+        <button class="user" id="userBtn" aria-haspopup="true" aria-expanded="false" aria-controls="userCard">
+          <span>Britney Gamarra</span>
+          <i class="fa-solid fa-chevron-down" style="font-size:10px"></i>
+        </button>
+        <div class="user-card" id="userCard" role="menu" aria-hidden="true">
+          <div class="user-header">
+            <div class="brand-mini">ZEGEL</div>
+            <div class="astro"><i class="fa-solid fa-user-astronaut"></i></div>
+          </div>
+          <div class="profile">
+            <div class="avatar"><i class="fa-regular fa-user"></i></div>
+            <div class="info">
+              <div class="name">Britney Gamarra</div>
+              <div class="mail">felicitatapiacardenas@gmail.com</div>
+            </div>
+          </div>
+          <div class="user-actions">
+            <button class="line"><i class="fa-regular fa-user"></i> Mi cuenta</button>
+            <button class="line"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="main-col">
+
+        <!-- ===== Resumen (KPIs) ===== -->
+        <section class="card center-card mobile-only-centered">
+          <h3 class="h3" style="margin-bottom:12px">Resumen del periodo</h3>
+          <div class="grades-meta" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+            <div class="kpi" style="background:#f5f6f8;border:1px solid var(--line);border-radius:12px;padding:12px">
+              <div class="muted-sub">Total pagado</div>
+              <div style="font-weight:800;font-size:18px" id="kpiPagado">S/ 1,249.00</div>
+            </div>
+            <div class="kpi" style="background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:12px">
+              <div class="muted-sub">Pendiente</div>
+              <div style="font-weight:800;font-size:18px" id="kpiPendiente">S/ 250.00</div>
+            </div>
+            <div class="kpi" style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:12px">
+              <div class="muted-sub">Último pago</div>
+              <div style="font-weight:800;font-size:16px">18.08.2025</div>
+            </div>
+            <div class="kpi" style="background:#fff1f2;border:1px solid #fecdd3;border-radius:12px;padding:12px">
+              <div class="muted-sub">Próximo vencimiento</div>
+              <div style="font-weight:800;font-size:16px">18.08.2025</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Filtros y acciones ===== -->
+        <section class="card center-card mobile-only-centered">
+          <div class="grades-head" style="display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center">
+            <div class="grades-meta" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <select id="selPeriodo" class="grades-select" aria-label="Periodo académico">
+                <option value="2025-2" selected>Periodo 2025-2</option>
+                <option value="2025-1">Periodo 2025-1</option>
+              </select>
+              <select id="selTipo" class="grades-select" aria-label="Tipo de movimiento">
+                <option value="todos" selected>Todos los tipos</option>
+                <option value="cuota">Cuotas</option>
+                <option value="matricula">Matrícula</option>
+                <option value="otros">Otros</option>
+              </select>
+            </div>
+            <a class="link" href="#" id="btnDescargar"><i class="fa-regular fa-file-pdf"></i> Descargar PDF</a>
+          </div>
+        </section>
+
+        <!-- ===== Tabla de movimientos ===== -->
+        <section class="card center-card mobile-only-centered">
+          <h3 class="h3" style="margin-bottom:10px">Movimientos</h3>
+          <div class="table-wrap">
+            <table class="grades-table" id="tblMov">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Tipo</th>
+                  <th>Descripción</th>
+                  <th>Monto</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Pagos realizados (2025-1, de tu historial) -->
+                <tr data-periodo="2025-1" data-tipo="cuota">
+                  <td>18.08.2025</td>
+                  <td>Cuota 5</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td data-monto="225">S/ 225.00</td>
+                  <td><span class="badge aprobado">Pagado</span></td>
+                </tr>
+                <tr data-periodo="2025-1" data-tipo="cuota">
+                  <td>14.07.2025</td>
+                  <td>Cuota 4</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td data-monto="225">S/ 225.00</td>
+                  <td><span class="badge aprobado">Pagado</span></td>
+                </tr>
+                <tr data-periodo="2025-1" data-tipo="cuota">
+                  <td>14.06.2025</td>
+                  <td>Cuota 3</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td data-monto="225">S/ 225.00</td>
+                  <td><span class="badge aprobado">Pagado</span></td>
+                </tr>
+                <tr data-periodo="2025-1" data-tipo="cuota">
+                  <td>17.05.2025</td>
+                  <td>Cuota 2</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td data-monto="225">S/ 225.00</td>
+                  <td><span class="badge aprobado">Pagado</span></td>
+                </tr>
+                <tr data-periodo="2025-1" data-tipo="cuota">
+                  <td>15.04.2025</td>
+                  <td>Cuota 1</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td data-monto="225">S/ 225.00</td>
+                  <td><span class="badge aprobado">Pagado</span></td>
+                </tr>
+                <tr data-periodo="2025-1" data-tipo="matricula">
+                  <td>06.01.2025</td>
+                  <td>Matrícula</td>
+                  <td>Gestión de Sistemas de Información - Eest Virtual</td>
+                  <td data-monto="99">S/ 99.00</td>
+                  <td><span class="badge aprobado">Pagado</span></td>
+                </tr>
+
+                <!-- Pendiente (2025-2) -->
+                <tr data-periodo="2025-2" data-tipo="matricula">
+                  <td>18.08.2025</td>
+                  <td>Matrícula 2025-2</td>
+                  <td>Pago pendiente</td>
+                  <td data-monto="250">S/ 250.00</td>
+                  <td><span class="badge lock">Pendiente</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3"></td>
+                  <td>Total visible</td>
+                  <td class="total" id="totalVisible">S/ 1,499.00</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===== Navegación inferior ===== -->
+<nav class="mobile-nav" aria-label="Navegación inferior">
+  <a class="mitem" href="inicio.html" data-route="inicio">
+    <i class="fa-solid fa-house"></i><span>Inicio</span>
+  </a>
+  <a class="mitem" href="informe.html" data-route="informes">
+    <i class="fa-regular fa-rectangle-list"></i><span>Informes</span>
+  </a>
+  <a class="mitem active" href="reporte.html" data-route="reportes" aria-current="page">
+    <i class="fa-solid fa-chart-column"></i><span>Reportes</span>
+  </a>
+  <a class="mitem" href="pagos.html" data-route="pagos">
+    <i class="fa-solid fa-credit-card"></i><span>Pagos</span>
+  </a>
+  <a class="mitem" href="notas.html" data-route="notas">
+    <i class="fa-solid fa-graduation-cap"></i><span>Notas</span>
+  </a>
+</nav>
+
+<script>
+// Popover usuario
+const userBtn=document.getElementById('userBtn');
+const userCard=document.getElementById('userCard');
+function toggle(el){ el.classList.toggle('show'); el?.setAttribute?.('aria-hidden', String(!el.classList.contains('show'))); }
+function hide(el){ el.classList.remove('show'); el?.setAttribute?.('aria-hidden','true'); }
+userBtn?.addEventListener('click',(e)=>{e.stopPropagation();toggle(userCard);});
+document.addEventListener('click',()=>hide(userCard));
+
+// ---- Filtros + totales dinámicos ----
+const selPeriodo = document.getElementById('selPeriodo');
+const selTipo    = document.getElementById('selTipo');
+const tbl        = document.getElementById('tblMov');
+const totalVisEl = document.getElementById('totalVisible');
+const kpiPagado  = document.getElementById('kpiPagado');
+const kpiPend    = document.getElementById('kpiPendiente');
+
+function aplicarFiltros(){
+  const per = selPeriodo.value;   // '2025-2' o '2025-1'
+  const tipo = selTipo.value;     // 'todos', 'cuota', 'matricula', 'otros'
+  let total = 0;
+  let pagado = 0;
+  let pendiente = 0;
+
+  [...tbl.tBodies[0].rows].forEach(tr=>{
+    const rPer  = tr.getAttribute('data-periodo');
+    const rTipo = tr.getAttribute('data-tipo');
+    const monto = Number(tr.querySelector('[data-monto]').dataset.monto || 0);
+    const estado = tr.querySelector('.badge')?.textContent?.trim().toLowerCase() || '';
+
+    const matchPeriodo = per ? (rPer === per) : true;
+    const matchTipo = (tipo === 'todos') ? true : (rTipo === tipo);
+
+    const visible = matchPeriodo && matchTipo;
+    tr.style.display = visible ? '' : 'none';
+
+    if(visible){
+      total += monto;
+      if(estado.includes('pagado')) pagado += monto;
+      if(estado.includes('pendiente')) pendiente += monto;
+    }
+  });
+
+  totalVisEl.textContent = 'S/ ' + total.toLocaleString('es-PE',{minimumFractionDigits:2});
+  kpiPagado.textContent  = 'S/ ' + pagado.toLocaleString('es-PE',{minimumFractionDigits:2});
+  kpiPend.textContent    = 'S/ ' + pendiente.toLocaleString('es-PE',{minimumFractionDigits:2});
+}
+
+selPeriodo.addEventListener('change', aplicarFiltros);
+selTipo.addEventListener('change', aplicarFiltros);
+aplicarFiltros();
+
+// Botón descargar (placeholder)
+document.getElementById('btnDescargar')?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  alert('Descarga de PDF no implementada en esta maqueta.');
+});
+</script>
+</body>
+</html>

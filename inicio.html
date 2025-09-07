@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EVA – Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <!-- ====== SIDEBAR (PC) ====== -->
+  <nav class="sidebar" aria-label="Menú principal">
+    <div class="brand">
+      <div class="eva"><span>E</span><span>V</span><span>A</span></div>
+    </div>
+
+    <button class="btn"><i class="fa-solid fa-house"></i><span>Inicio</span></button>
+
+    <!-- Mis unidades didácticas -->
+    <section class="group" id="g-mud">
+      <button class="group-head" aria-expanded="false" aria-controls="mud-sub">
+        <div class="ico"><i class="fa-solid fa-book"></i></div>
+        <span class="label">Mis unidades didácticas</span>
+        <i class="fa-solid fa-chevron-down chev"></i>
+      </button>
+      <ul id="mud-sub" class="sub" hidden>
+        <li><i class="fa-regular fa-folder"></i><span>Gestión de Sistemas de Información - Eest Virtual</span></li>
+        <li><i class="fa-regular fa-folder"></i><span>Te Damos la Bienvenida</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Avance curricular</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Unidades didácticas finalizadas</span></li>
+      </ul>
+    </section>
+
+    <!-- Biblioteca -->
+    <section class="group" id="g-biblio">
+      <button class="group-head" aria-expanded="false" aria-controls="biblio-sub">
+        <div class="ico"><i class="fa-solid fa-book-open"></i></div>
+        <span class="label">Biblioteca</span>
+        <i class="fa-solid fa-chevron-down chev"></i>
+      </button>
+      <ul id="biblio-sub" class="sub" hidden>
+        <li><i class="fa-regular fa-file-lines"></i><span>CRAI</span></li>
+      </ul>
+    </section>
+
+    <!-- Publicaciones -->
+    <section class="group">
+      <div class="group-head static">
+        <div class="ico"><i class="fa-solid fa-bullhorn"></i></div>
+        <span class="label">Publicaciones</span>
+      </div>
+    </section>
+
+    <!-- Pagos -->
+    <section class="group">
+      <div class="group-head static">
+        <div class="ico"><i class="fa-solid fa-building-columns"></i></div>
+        <span class="label">Pagos</span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- Trámites -->
+    <section class="group" id="g-tram">
+      <button class="group-head" aria-expanded="false" aria-controls="tram-sub">
+        <div class="ico"><i class="fa-regular fa-file-lines"></i></div>
+        <span class="label">Trámites</span>
+        <span class="dot tiny"></span>
+        <i class="fa-solid fa-chevron-down chev"></i>
+      </button>
+      <ul id="tram-sub" class="sub" hidden>
+        <li><i class="fa-regular fa-file-lines"></i><span>Programa de estudios</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Educación ejecutiva</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Programa de inglés</span></li>
+      </ul>
+    </section>
+
+    <!-- Empleabilidad -->
+    <section class="group" id="g-empl">
+      <button class="group-head" aria-expanded="false" aria-controls="empl-sub">
+        <div class="ico"><i class="fa-solid fa-briefcase"></i></div>
+        <span class="label">Empleabilidad</span>
+        <i class="fa-solid fa-chevron-down chev"></i>
+      </button>
+      <ul id="empl-sub" class="sub" hidden>
+        <li><i class="fa-regular fa-file-lines"></i><span>Club Laboral</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Eventos y capacitaciones</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Servicios adicionales</span></li>
+      </ul>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="group" id="g-benef">
+      <button class="group-head" aria-expanded="false" aria-controls="benef-sub">
+        <div class="ico"><i class="fa-solid fa-gift"></i></div>
+        <span class="label">Beneficios</span>
+        <i class="fa-solid fa-chevron-down chev"></i>
+      </button>
+      <ul id="benef-sub" class="sub" hidden>
+        <li><i class="fa-regular fa-file-lines"></i><span>Mis referidos</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Reserva de espacios</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Orientación Psicológica</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Becas</span></li>
+      </ul>
+    </section>
+
+    <!-- Guía del estudiante -->
+    <section class="group" id="g-guia">
+      <button class="group-head" aria-expanded="false" aria-controls="guia-sub">
+        <div class="ico"><i class="fa-solid fa-book"></i></div>
+        <span class="label">Guía del estudiante</span>
+        <i class="fa-solid fa-chevron-down chev"></i>
+      </button>
+      <ul id="guia-sub" class="sub" hidden>
+        <li><i class="fa-regular fa-file-lines"></i><span>Programa de estudios</span></li>
+        <li><i class="fa-regular fa-file-lines"></i><span>Educación ejecutiva</span></li>
+      </ul>
+    </section>
+
+    <!-- Encuestas -->
+    <section class="group">
+      <div class="group-head static">
+        <div class="ico"><i class="fa-regular fa-square-check"></i></div>
+        <span class="label">Encuestas</span>
+        <span class="dot"></span>
+      </div>
+    </section>
+  </nav>
+
+  <!-- ====== DERECHA ====== -->
+  <div>
+    <header class="topbar">
+      <!-- Logo mini para móvil -->
+       <div class="eva-mini" aria-label="Logo">
+  <img class="eva-logo" src="logo.png" alt="Logo institucional">
+</div>
+       
+        <!-- Ayuda -->
+        <div class="popover-wrap">
+          <button class="icon-btn" id="helpBtn" aria-haspopup="true" aria-expanded="false" aria-controls="helpMenu">
+            <i class="fa-regular fa-circle-question"></i>
+          </button>
+          <div class="menu" id="helpMenu" role="menu" aria-hidden="true">
+            <button class="menu-item">Ver recorrido de EVA</button>
+            <button class="menu-item">Ver recorrido de Mis Unidades Didácticas</button>
+            <button class="menu-item">Ver recorrido de Avance Curricular</button>
+          </div>
+        </div>
+
+        <!-- Notificaciones -->
+        <div class="popover-wrap">
+          <button class="icon-btn" id="bellBtn" aria-haspopup="true" aria-expanded="false" aria-controls="notifPanel">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <section class="notif-panel" id="notifPanel" aria-hidden="true">
+            <header class="notif-head">
+              <h3>Notificaciones</h3>
+              <button class="icon-btn small" title="Configuración"><i class="fa-solid fa-sliders"></i></button>
+            </header>
+            <nav class="notif-tabs" role="tablist">
+              <button class="ntab active" role="tab" aria-selected="true" data-target="#tab-all">Todas</button>
+              <button class="ntab" role="tab" aria-selected="false" data-target="#tab-aca">Académicas</button>
+              <button class="ntab" role="tab" aria-selected="false" data-target="#tab-adm">Administrativas</button>
+            </nav>
+            <div class="notif-body">
+              <div id="tab-all" class="ntabpanel show" role="tabpanel">
+                <div class="notif-item">
+                  <div class="nicon"><i class="fa-solid fa-bell"></i><span class="pink-dot"></span></div>
+                  <div class="ncontent">
+                    <div class="ntitle">Ya se acercan las evaluaciones</div>
+                    <div class="ntext">Puedes pedir tu Evaluación Sustitutoría. Tienes 5 días hábiles para solicitar.</div>
+                    <a href="#" class="link">Solicitar evaluación</a>
+                  </div>
+                  <div class="nmeta">
+                    <div class="ndays">9 d</div>
+                    <button class="trash" title="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                  </div>
+                </div>
+                <div class="notif-item">
+                  <div class="nicon"><i class="fa-solid fa-bell"></i><span class="pink-dot"></span></div>
+                  <div class="ncontent">
+                    <div class="ntitle">Ya se acercan las evaluaciones</div>
+                    <div class="ntext">Puedes pedir tu Evaluación Sustitutoría. Tienes 5 días hábiles para solicitar.</div>
+                    <a href="#" class="link">Solicitar evaluación</a>
+                  </div>
+                  <div class="nmeta">
+                    <div class="ndays">10 d</div>
+                    <button class="trash" title="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div id="tab-aca" class="ntabpanel" role="tabpanel">
+                <div class="empty">Sin notificaciones académicas.</div>
+              </div>
+              <div id="tab-adm" class="ntabpanel" role="tabpanel">
+                <div class="empty">Sin notificaciones administrativas.</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Usuario -->
+        <div class="popover-wrap">
+          <button class="user" id="userBtn" aria-haspopup="true" aria-expanded="false" aria-controls="userCard">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop" alt="">
+            <span>Britney Gamarra</span>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px"></i>
+          </button>
+          <div class="user-card" id="userCard" role="menu" aria-hidden="true">
+            <div class="user-header">
+              <div class="brand-mini">ZEGEL</div>
+              <div class="astro"><i class="fa-solid fa-user-astronaut"></i></div>
+            </div>
+            <div class="profile">
+              <div class="avatar"><i class="fa-regular fa-user"></i></div>
+              <div class="info">
+                <div class="name">Britney Gamarra</div>
+                <div class="mail">felicitatapiacardenas@gmail.com</div>
+              </div>
+            </div>
+            <div class="user-actions">
+              <button class="line"><i class="fa-regular fa-user"></i> Mi cuenta</button>
+              <button class="line"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="main-col">
+        <section class="card">
+          <div class="tabs">
+            <button class="tab active" id="tab1" type="button">Mis clases</button>
+            <button class="tab" id="tab2" type="button">Mi horario</button>
+          </div>
+          <div class="tabpanels">
+            <div id="panel1">
+              <div class="big-empty">
+                <i class="fa-regular fa-clock"></i>
+                <div>¡Relájate, toma un descanso!<br>Aún no hay clases por asistir.</div>
+              </div>
+            </div>
+            <div id="panel2" class="hidden">
+              <div class="big-empty">
+                <i class="fa-solid fa-calendar"></i>
+                <div>No hay horario cargado.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3 class="h3">Mis pendientes</h3>
+          <div class="big-empty">
+            <i class="fa-regular fa-rectangle-list"></i>
+            <div>No tienes pendientes por ahora.</div>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section class="side-card">
+          <div class="side-title">
+            <h3>Publicaciones</h3>
+            <a href="#" class="blue">Ver todo</a>
+          </div>
+          <article class="pub">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOKI3CZTWOYPDD5xX86xNbgVQbK2LD3r0s0g&s" alt="">
+            <div>
+              <div class="topic">🎓 Master Class virtual: Introducción a Asterisk, descubre el…</div>
+              <div class="title">Facultad de tecnología</div>
+              <div class="author">Kenny Mallqui</div>
+            </div>
+          </article>
+          <article class="pub">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=240&auto=format&fit=crop" alt="">
+            <div>
+              <div class="topic">Desde el área de Empleabilidad, queremos invitarte a…</div>
+              <div class="title">Empleabilidad</div>
+              <div class="author">Diego Casquino</div>
+            </div>
+          </article>
+          <article class="pub">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=240&auto=format&fit=crop" alt="">
+            <div>
+              <div class="topic">A través del convenio con la Universidad La Salle…</div>
+              <div class="title">Comunicaciones</div>
+              <div class="author">Ronald Reyes</div>
+            </div>
+          </article>
+        </section>
+      </aside>
+    </main>
+  </div>
+</div>
+
+<nav class="mobile-nav" aria-label="Navegación inferior">
+  <a class="mitem" href="inicio.html" data-route="inicio">
+    <i class="fa-solid fa-house"></i><span>Inicio</span>
+  </a>
+  <a class="mitem" href="informe.html" data-route="informes">
+    <i class="fa-regular fa-rectangle-list"></i><span>Informes</span>
+  </a>
+  <a class="mitem" href="reporte.html" data-route="reportes">
+    <i class="fa-solid fa-chart-column"></i><span>Reportes</span>
+  </a>
+  <a class="mitem" href="pagos.html" data-route="pagos">
+    <i class="fa-solid fa-credit-card"></i><span>Pagos</span>
+  </a>
+  <a class="mitem" href="notas.html" data-route="notas">
+    <i class="fa-solid fa-graduation-cap"></i><span>Notas</span>
+  </a>
+</nav>
+
+
+
+<script>
+// Tabs principales
+const t1=document.getElementById('tab1'), t2=document.getElementById('tab2');
+const p1=document.getElementById('panel1'), p2=document.getElementById('panel2');
+t1.onclick=()=>{t1.classList.add('active');t2.classList.remove('active');p1.classList.remove('hidden');p2.classList.add('hidden');}
+t2.onclick=()=>{t2.classList.add('active');t1.classList.remove('active');p2.classList.remove('hidden');p1.classList.add('hidden');}
+
+// Toggle grupos accesibles (PC)
+document.querySelector('.sidebar').addEventListener('click',(e)=>{
+  const head = e.target.closest('.group-head:not(.static)');
+  if(!head) return;
+  const group = head.parentElement;
+  const expanded = head.getAttribute('aria-expanded') === 'true';
+  head.setAttribute('aria-expanded', String(!expanded));
+  group.classList.toggle('open', !expanded);
+  const sub = group.querySelector('.sub');
+  if(sub){ expanded ? sub.setAttribute('hidden','') : sub.removeAttribute('hidden'); }
+});
+
+// Popovers
+const helpBtn=document.getElementById('helpBtn');
+const helpMenu=document.getElementById('helpMenu');
+const userBtn=document.getElementById('userBtn');
+const userCard=document.getElementById('userCard');
+const bellBtn=document.getElementById('bellBtn');
+const notifPanel=document.getElementById('notifPanel');
+
+function hide(el){ el.classList.remove('show'); el?.setAttribute?.('aria-hidden','true'); }
+function toggle(el){ el.classList.toggle('show'); el?.setAttribute?.('aria-hidden', String(!el.classList.contains('show'))); }
+
+helpBtn.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(helpMenu); hide(userCard); hide(notifPanel); });
+userBtn.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(userCard); hide(helpMenu); hide(notifPanel); });
+bellBtn.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(notifPanel); hide(helpMenu); hide(userCard); });
+document.addEventListener('click', ()=>{ hide(helpMenu); hide(userCard); hide(notifPanel); });
+
+// Tabs de notificaciones
+document.querySelectorAll('.notif-tabs .ntab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.notif-tabs .ntab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const target = btn.getAttribute('data-target');
+    document.querySelectorAll('.ntabpanel').forEach(p=>p.classList.remove('show'));
+    document.querySelector(target).classList.add('show');
+  });
+});
+
+// Bottom nav (visual)
+document.querySelectorAll('.mobile-nav .mitem').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('.mobile-nav .mitem').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+// Marca activo en la barra inferior según la URL
+(function(){
+  const path = location.pathname.replace(/\/$/, '');
+  let route = 'inicio';
+  if (/\/informes(\/|$)/.test(path)) route = 'informes';
+  else if (/\/reportes(\/|$)/.test(path)) route = 'reportes';
+  else if (/\/pagos(\/|$)/.test(path))    route = 'pagos';
+  else if (/\/notas(\/|$)/.test(path))    route = 'notas';
+  else if (/inicio\.html$/.test(path) || path.endsWith('/')) route = 'inicio';
+
+  document.querySelectorAll('.mobile-nav .mitem').forEach(a=>{
+    const active = a.dataset.route === route;
+    a.classList.toggle('active', active);
+    if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  });
+})();
+
+
+</script>
+</body>
+</html>
